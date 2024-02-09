@@ -3,16 +3,16 @@ require('dotenv').config();
 
 const dbConfig = {
     connectToDatabase: () => {
-        const MONGODB_URI = process.env.MONGODB_URI;
+        const DATABASE_URL = process.env.DATABASE_URL;
 
-        console.log("environment variable", MONGODB_URI)
+        console.log("environment variable", DATABASE_URL)
 
-        if (!MONGODB_URI) {
+        if (!DATABASE_URL) {
             console.error('MongoDB connection string not provided. Exiting...');
             process.exit(1);
         }
 
-        mongoose.connect(MONGODB_URI);
+        mongoose.connect(DATABASE_URL);
 
         mongoose.connection.on('connected', () => {
             console.log('Connected to MongoDB');
