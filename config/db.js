@@ -5,6 +5,8 @@ const dbConfig = {
     connectToDatabase: () => {
         const MONGODB_URI = process.env.MONGODB_URI;
 
+        console.log("environment variable", MONGODB_URI)
+
         if (!MONGODB_URI) {
             console.error('MongoDB connection string not provided. Exiting...');
             process.exit(1);
