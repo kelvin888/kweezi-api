@@ -5,8 +5,6 @@ const dbConfig = {
     connectToDatabase: () => {
         const DATABASE_URL = process.env.DATABASE_URL;
 
-        console.log("environment variable", DATABASE_URL)
-
         if (!DATABASE_URL) {
             console.error('MongoDB connection string not provided. Exiting...');
             process.exit(1);
@@ -15,7 +13,7 @@ const dbConfig = {
         mongoose.connect(DATABASE_URL);
 
         mongoose.connection.on('connected', () => {
-            console.log('Connected to MongoDB');
+            console.log('Connected to DB');
         });
 
         mongoose.connection.on('error', (err) => {
