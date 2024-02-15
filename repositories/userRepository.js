@@ -16,8 +16,6 @@ const findUserByEmail = async (email) => {
     return User.findOne({ email });
 };
 
-// Add any other relevant functions
-
 module.exports = {
     createUser,
     findUserByEmail,
